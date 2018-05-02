@@ -1,6 +1,17 @@
 data = {
  "subject": [
-  {"id": 1, "title": "taaroz li maher", "title-heb": "רהמ יל זוראת", "lines": [""]},
+  {"id": 1, "title": "taaroz li maher", "title-heb": "תארוז לי מהר",
+    "lines":
+    [
+      "פיתה עם שווארמה"
+     ,"לחמניה עם נקניקיה"
+     ,"פיצה"
+     ,"חמניה עם נקניקיה"
+     ,"לחמניה עם נקניקיה"
+     ,"לחמניה עם נקניקיה"
+     ,"לחמניה עם נקניקיה"
+     ,"לחמניה עם נקניקיה"
+   ]},
   {"id": 2, "title": "shmor li ve eshmor lecha", "lines": []},
   {"id": 3, "title": "paam hanoar haya noar", "lines": []},
   {"id": 4, "title": "ma she talui mityabesh ve nofel", "lines": []},
