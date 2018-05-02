@@ -1,0 +1,69 @@
+.main {
+	background-image: url(../img/Gray-plain-website-background.jpg);
+}
+
+.players {
+	width: 400px;
+	text-align: center
+}
+
+.add-player {
+	width: 200px
+
+}
+
+.players-input {
+	margin: 5px 5px 5px 5px
+}
+
+.players-score {
+	text-align: center;
+	width: 200px;
+	height: 30px;
+	font-size: 23px;
+}
+
+.center-players {
+	position: relative;
+  	width: 1200px;
+  	
+  	margin: 0px 20% 0 20%;
+}
+
+.center-frame {
+	position: relative;
+	height: 500px;
+  	margin: -50px 20% 0 20%;
+  	z-index: 15;
+  	top: 10%;
+  	
+  	width: 1200px;
+	border: 2px solid;
+    border-radius: 5px;
+}
+
+.center-bottom {
+	position: relative;
+  	width: 1200px;
+  	margin: 95px 0 -96px 902px;
+}
+
+.play-button {
+	background-color: green;
+    width: 160px;
+    text-align: center;
+}
+
+.main-text {
+	position: relative;
+	font-size: 150px;
+	color: white;
+	text-align: center;
+	margin: 10px 10px 10px 10px
+}
+
+.counter div {
+	position: relative;
+	left: 47%;
+	margin-top: 40px;
+}
