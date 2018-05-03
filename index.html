@@ -29,7 +29,7 @@
 		<input id="player1a" type="text" class="ui-widget players-input">
 		<input id="player1b" type="text" class="ui-widget players-input">
 		<button id="add1" class="ui-button ui-widget ui-corner-all add-player players-input" onclick="addPlayer(1)"><i class="fa fa-user-plus" aria-hidden="true"></i></button>
-		<label id="score1" class="ui-widget-header ui-corner-all players-input players-score" hidden="true">0</label>
+		<div><label id="score1" class="ui-widget-header ui-corner-all players-input players-score">0</label></div>
 	</div>
 	</td>
 	<td>
@@ -37,7 +37,7 @@
 		<input id="player2a" type="text" class="ui-widget players-input">
 		<input id="player2b" type="text" class="ui-widget players-input">
 		<button id="add2" class="ui-button ui-widget ui-corner-all add-player players-input" onclick="addPlayer(2)"><i class="fa fa-user-plus" aria-hidden="true"></i></button>
-		<label id="score2" class="ui-widget-header ui-corner-all players-input players-score" hidden="true">0</label>
+		<div><label id="score2" class="ui-widget-header ui-corner-all players-input players-score">0</label></div>
 	</div>
 	</td>
 	<td>
@@ -45,7 +45,7 @@
 		<input id="player3a" type="text" class="ui-widget players-input">
 		<input id="player3b" type="text" class="ui-widget players-input">
 		<button id="add3" class="ui-button ui-widget ui-corner-all add-player players-input" onclick="addPlayer(3)"><i class="fa fa-user-plus" aria-hidden="true"></i></button>
-		<label id="score3" class="ui-widget-header ui-corner-all players-input players-score" hidden="true">0</label>
+		<div><label id="score3" class="ui-widget-header ui-corner-all players-input players-score">0</label></div>
 	</div>
 	
 	</td>
@@ -56,15 +56,28 @@
 
 
 <!-- Center screen -->
-<div class="center-frame ui-corner-all">
-	<h1 class="main-text">רזבובו</h1>
+<div class="center-frame ui-corner-all clickable" id="center-frame" onclick="initTiles()">
+	<div class="grid">
+	  <div class="grid-item" id="grid-item-1"></div>
+	  <div class="grid-item" id="grid-item-2"></div>
+	  <div class="grid-item" id="grid-item-3"></div>
+	  <div class="grid-item" id="grid-item-4"></div>
+	  <div class="grid-item" id="grid-item-5"></div>
+	  <div class="grid-item" id="grid-item-6"></div>
+	  <div class="grid-item" id="grid-item-7"></div>
+	  <div class="grid-item" id="grid-item-8"></div>
+	  <div class="grid-item" id="grid-item-9"></div>
+	  
+	</div>
 </div>
 
  <!-- Counter from:
 	https://github.com/Reflejo/jquery-countdown
   --> 
  <div class="center-bottom">
- 	<button id="play" class="play-button ui-button ui-widget ui-corner-all" onclick="mockData()"><i class="fa fa-play" aria-hidden="true"></i></button>
+	<button id="point" class="game-button point-button ui-button ui-widget ui-corner-all" onclick="mockData()" style='visibility:hidden'><i class="fa fa-check" aria-hidden="true"></i></button>
+ 	<button id="play" class="game-button ui-button ui-widget ui-corner-all" onclick="startRound()"><i class="fa fa-play" aria-hidden="true"></i></button>
+	<button id="next" class="game-button ui-button ui-widget ui-corner-all" onclick="mockData()" style='visibility:hidden'><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
 </div>
 
 <div id="counter" class="counter"></div>
@@ -80,7 +93,48 @@
   	//timerEnd: function() { document.getElementById("endRoundSound").play() },
     image: "img/digits.png"
 	});
-
+	
+ $('.grid-item').hide()
+ //$('#point').hide()
+ //$('#next').hide()
+ //$('#next').hide()
+	/*
+	$('.grid').masonry({
+		itemSelector: '.grid-item',
+		columnWidth: 160
+	});
+	*/
+   
+   var menu;
+   var nextItemIndex;
+   var nextPlayer = 1;
+  
+  function startRound() {
+	
+  }
+   
+  function initTiles() {
+	$('.grid-item').show()
+	$('#center-frame').removeAttr("onclick");
+	$("#grid-item-1").html("<h1 class='main-text-item' onclick=selectItem(0)>"+data['items'][0]['title-heb']+"</h1>")
+	$("#grid-item-2").html("<h1 class='main-text-item'>"+data['items'][1]['title-heb']+"</h1>");
+	$("#grid-item-3").html("<h1 class='main-text-item'>"+data['items'][2]['title-heb']+"</h1>");
+	$("#grid-item-4").html("<h1 class='main-text-item'>"+data['items'][3]['title-heb']+"</h1>");
+	$("#grid-item-5").html("<h1 class='main-text-item'>"+data['items'][4]['title-heb']+"</h1>");
+	$("#grid-item-6").html("<h1 class='main-text-item'>"+data['items'][5]['title-heb']+"</h1>");
+	$("#grid-item-7").html("<h1 class='main-text-item'>"+data['items'][6]['title-heb']+"</h1>");
+	$("#grid-item-8").html("<h1 class='main-text-item'>"+data['items'][7]['title-heb']+"</h1>");
+	$("#grid-item-9").html("<h1 class='main-text-item'>"+data['items'][8]['title-heb']+"</h1>");
+	
+	menu = $('#center-frame').html();
+	nextItemIndex = 9;
+  }
+  
+  function selectItem(itemIndex) {
+	$('#center-frame').html("<h1 class='main-text-item'>"+data['items'][itemIndex]['title-heb']+"</h1>");
+	
+  }
+  
   function addPlayer(id) {
   	$("#player"+id+"a")[0].readOnly=true;
   	$("#player"+id+"b")[0].readOnly=true;

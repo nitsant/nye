@@ -32,34 +32,51 @@
 
 .center-frame {
 	position: relative;
-	height: 500px;
-  	margin: -50px 20% 0 20%;
+	height: 700px;
+  	margin: -30px 0 0 480px;
   	z-index: 15;
   	top: 10%;
   	
-  	width: 1200px;
+  	width: 1015px;
 	border: 2px solid;
     border-radius: 5px;
 }
 
 .center-bottom {
 	position: relative;
-  	width: 1200px;
-  	margin: 95px 0 -96px 902px;
+  	width: 1015px;
+  	margin: 95px 0 -96px 715px;
 }
 
-.play-button {
+.game-button {
+	
+    width: 160px;
+    text-align: center;
+}
+.point-button {
 	background-color: green;
+    
+}
+.next-button {
+	
     width: 160px;
     text-align: center;
 }
 
-.main-text {
+.main-text-item{
 	position: relative;
-	font-size: 150px;
+	font-size: 50px;
 	color: white;
 	text-align: center;
-	margin: 10px 10px 10px 10px
+	margin: 20px 10px 10px 10px
+}
+
+.main-text-line{
+	position: relative;
+	font-size: 50px;
+	color: white;
+	text-align: center;
+	margin: 20px 10px 10px 10px
 }
 
 .counter div {
@@ -67,3 +84,38 @@
 	left: 47%;
 	margin-top: 40px;
 }
+
+.clickable {
+	cursor: pointer
+}
+
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+/* ---- grid ---- */
+
+.grid {
+  #background: #EEE;
+  max-width: 1200px;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+  width: 337px;
+  height: 233px;
+  float: left;
+  #background: #D26;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
+}
+
